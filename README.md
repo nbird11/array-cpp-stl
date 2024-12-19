@@ -78,7 +78,7 @@ The project includes Visual Studio solution files for building on Windows. Open 
 ## Notes
 
 - This is an educational implementation focused on demonstrating STL container concepts
-- The implementation emphasizes clarity over optimization
+- The implementation aims to match `std::array`'s performance
 - Error checking is included via bounds checking in at()
 - Memory is statically allocated at compile time
 
