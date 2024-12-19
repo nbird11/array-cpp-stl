@@ -16,7 +16,7 @@ The custom array is a fixed-size sequence container that encapsulates a statical
 
 ## Class Structure
 
-### array<T,N>
+### `custom::array<T,N>`
 The main array class template with two parameters:
 - T: Type of elements
 - N: Fixed size of array
@@ -28,7 +28,7 @@ Key methods:
 - `begin()`, `end()`: Iterator support
 - `size()`, `empty()`: Container info
 
-### array<T,N>::iterator
+### `custom::array<T,N>::iterator`
 Iterator class for traversing array elements. Supports:
 - Forward iteration
 - Element access via dereferencing
@@ -82,6 +82,15 @@ The project includes Visual Studio solution files for building on Windows. Open 
 - Error checking is included via bounds checking in at()
 - Memory is statically allocated at compile time
 
+#### Disclaimer
+
+This README was initially generated using an AI Language Model (Claude 3.5 Sonnet) and subsequently edited by a human for accuracy and completeness. While the content accurately describes the codebase, the writing structure and initial draft were AI-assisted. The actual code implementation and testing were completed by a human developer.
+
 ## License
 
 This code is provided for educational purposes. See included license file for terms of use. [TODO: add LICENSE]
+
+## Author
+
+Nathan Bird  
+[nathanbirdka@gmail.com](mailto:nathanbirdka@gmail.com)
