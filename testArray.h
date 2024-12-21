@@ -52,20 +52,20 @@ public:
       // Iterator
       test_begin();
       test_end();
-      //test_iterator_default();
-      //test_iterator_nondefault();
-      //test_iterator_copy();
-      //test_iterator_assign();
-      //test_iterator_equals_equals();
-      //test_iterator_equals_differentValues();
-      //test_iterator_equals_differentArrays();
-      //test_iterator_notequals_equals();
-      //test_iterator_notequals_differentValues();
-      //test_iterator_notequals_differentArrays();
-      //test_iterator_dereferenceRead();
-      //test_iterator_dereferenceWrite();
-      //test_iterator_incrementPrefix();
-      //test_iterator_incrementPostfix();
+      test_iterator_default();
+      test_iterator_nondefault();
+      test_iterator_copy();
+      test_iterator_assign();
+      test_iterator_equals_equals();
+      test_iterator_equals_differentValues();
+      test_iterator_equals_differentArrays();
+      test_iterator_notequals_equals();
+      test_iterator_notequals_differentValues();
+      test_iterator_notequals_differentArrays();
+      test_iterator_dereferenceRead();
+      test_iterator_dereferenceWrite();
+      test_iterator_incrementPrefix();
+      test_iterator_incrementPostfix();
 
       report("Array");
    }
