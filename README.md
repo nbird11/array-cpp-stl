@@ -1,4 +1,4 @@
-# Custom STL Array Implementation
+# C++ STL Array Implementation
 
 This project implements a custom version of the C++ Standard Template Library (STL) array container. The implementation provides similar functionality to `std::array` while serving as an educational example.
 
