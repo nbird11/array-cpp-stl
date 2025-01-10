@@ -56,11 +56,11 @@ namespace custom
       // Begin and end methods
       iterator begin()
       {
-         return iterator(&(__elems_[0]));
+         return iterator(__elems_);
       }
       iterator end()
       {
-         return iterator(&(__elems_[N]));
+         return iterator(__elems_ + N);
       }
 
       // 
@@ -80,19 +80,17 @@ namespace custom
       // At
       T& at(size_t index)
       {
-         if (index >= size())
-         {
-            throw std::out_of_range("ARRAY: index out of range");
-         }
-         return __elems_[index];
+         if (index < N)
+            return __elems_[index];
+
+         throw std::out_of_range("ARRAY: index out of range");
       }
       const T& at(size_t index) const
       {
-         if (index >= size())
-         {
-            throw std::out_of_range("ARRAY: index out of range");
-         }
-         return __elems_[index];
+         if (index < N)
+            return __elems_[index];
+
+         throw std::out_of_range("ARRAY: index out of range");
       }
 
       // Front and Back
@@ -102,7 +100,7 @@ namespace custom
       }
       T& back()
       {
-         return at(size() - 1);
+         return at(N - 1);
       }
       const T& front() const
       {
@@ -110,7 +108,7 @@ namespace custom
       }
       const T& back()  const
       {
-         return at(size() - 1);
+         return at(N - 1);
       }
 
       //
@@ -129,7 +127,7 @@ namespace custom
       }
       bool empty() const
       {
-         return !N;
+         return N == 0;
       }
 
       //
@@ -152,18 +150,9 @@ namespace custom
       friend class ::TestArray; // give unit tests access to the privates
    public:
       // constructors, destructors, and assignment operator
-      iterator()
-      {
-         p = nullptr;
-      }
-      iterator(T* p)
-      {
-         this->p = p;
-      }
-      iterator(const iterator& rhs)
-      {
-         p = rhs.p;
-      }
+      iterator() : p(nullptr) {}
+      iterator(T* pointer) : p(pointer) {}
+      iterator(const iterator& rhs) : p(rhs.p) {}
       iterator& operator = (const iterator& rhs)
       {
          this->p = rhs.p;
@@ -198,9 +187,9 @@ namespace custom
       }
 
       // postfix increment
-      iterator operator ++ (int postfix)
+      iterator operator ++ (int)
       {
-         iterator temp = *this;
+         iterator temp(*this);
          ++p;
          return temp;
       }
